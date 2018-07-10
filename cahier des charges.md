@@ -5,7 +5,7 @@
 ### Pitch :
 
 ### principe de jeu :
-Le but est de crééer un outil ludique permettant de sensibiliser les plus jeunes à la problématique de l'économie d'énergie et des ressources. ranche d'age durant laquelle l'enfant s'ouvre au fonctionnement de son environement et est le plus réceptif à la sensibilisation.
+Le but est de créer un outil ludique permettant de sensibiliser les plus jeunes à la problématique de l'économie d'énergie et des ressources. ranche d'age durant laquelle l'enfant s'ouvre au fonctionnement de son environement et est le plus réceptif à la sensibilisation.
 
 ###La Société :
 
