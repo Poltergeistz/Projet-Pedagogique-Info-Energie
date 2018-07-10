@@ -1,10 +1,41 @@
 #Cahier des charges
 
+### Fiche produit :
+
+### Pitch :
+
+### principe de jeu :
+Le but est de crééer un outil ludique permettant de sensibiliser les plus jeunes à la problématique de l'économie d'énergie et des ressources. ranche d'age durant laquelle l'enfant s'ouvre au fonctionnement de son environement et est le plus réceptif à la sensibilisation.
+
 ###La Société :
 
+### Le role de chaqun :
 
-###Etude de marché :
-####Quelle est la cible du projet ?
+### Services :
 
-Le but étant de crééer un outil ludique permettant de sensibiliser les plus jeunes à la problématique de l'économie d'énergie et des ressources, la cible principale la plus pertinente pour l'appliquatipon sont les jeunes enfants ( primaire 6 à 10 ans ). Tranche d'age durant laquelle l'enfant se pose des question sur son environement et est le plus réceptif à la sensibilisation.
+### Nom de domaine :
+
+### Hébergement du site, de l'application :
+
+### Arboressence du site, de l'application :
+
+### Charte graphique :
+
+### couleurs du site (swatch) :
+
+### Polices :
+
+### Compatibilité :
+
+### Langue du site :
+
+### Médias :
+
+### Sécurité :
+
+### Réseaux sociaux :
+
+### Référencement local :
+
+### Formation :
 
