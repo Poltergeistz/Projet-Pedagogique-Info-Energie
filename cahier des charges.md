@@ -17,11 +17,21 @@ Le but est de créer un outil ludique permettant de sensibiliser les plus jeunes
 
 *Préparation
 - Le joueur choisis un pseudonyme au lancement de la partie, puis un skin. ( Le personnage peut avoir l'apparence d'une fille ou d'un garçon )
-- Il peut ensuiteparamétrer la difficulté de son expérience de jeu. ( parmis plusieurs modes suggérés. )
+- Il peut ensuite paramétrer la difficulté de son expérience de jeu. ( parmis plusieurs modes suggérés. )
 - 
 
 *Action
-- 
+- Le jeu est composée de plusieur piéces comme :
+  - Chambres
+  - Cuisine
+  - Salon
+  - Salle de bain
+  - Garage
+  - Jardin
+Est chaque piéces est composée de plusieur élément interactif (ex: lampe,télé,frigo,chargeur...)  
+- A la fin de toute les piéces, le joueur va pouvoir lancer le combat avec le Boss.
+- Le "reste" de la barre d'energie du nivau précédent est ajouter sur la piéces suivante.
+- A la fin de chaque niveau, un calque transparent se met en avant sur la scéne est donne des explication/consigne sur les éléments de la piéces.
 
 ###La Société :
 Le réseau des Espaces Info Énergie est un réseau de spécialistes créé par l’ADEME en 2001 pour répondre à toutes questions sur l’énergie dans l’habitat, les énergies renouvelables et les transports.
