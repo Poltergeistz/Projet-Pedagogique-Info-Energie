@@ -32,3 +32,14 @@ Objectifs :
 - Terminer le cahier des charges.
 - Définir les niveaux du jeu.
 - Penser à l'intégration des tests unitaires.
+
+Mercredi 11 Juillet :
+- Terminer le cahier des charges.
+- Définir les niveaux du jeu.
+- Réflechir à des tests.
+
+Problèmes rencontrés :
+- 
+
+Objectifs :
+- 
