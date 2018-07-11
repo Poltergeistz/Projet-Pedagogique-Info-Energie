@@ -36,10 +36,12 @@ Objectifs :
 Mercredi 11 Juillet :
 - Terminer le cahier des charges.
 - Définir les niveaux du jeu.
-- Réflechir à des tests.
+- Réfléchir à des tests.
 
 Problèmes rencontrés :
-- 
+- Questions sur le gameplay.
+Exemple : Certains points demandés par le client contrastent avec le gameplay.
 
 Objectifs :
-- 
+- Rencontre avec le client.
+- Revoir ou valider les besoins du client.
