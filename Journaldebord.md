@@ -58,3 +58,16 @@ Problèmes rencontrés :
 Objectifs :
 - Prototyper l'environnement.
 - Commencer le développement.
+
+Vendredi 13 Juillet : 
+- Design de l'environnement.
+- Serveur Node en version sandbox pour tester des fonctionnalités.
+- Fonction Javascript de randomisation des conseils éco-responsables.
+
+Problèmes rencontrés :
+- Aucuns pour le moment.
+
+Objectifs : 
+- Développer les niveaux.
+- Implémenter un écran de titre et des eco-conseils.
+- Créer la page HTML qui accueillera le jeu & les logos.
