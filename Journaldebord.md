@@ -45,3 +45,16 @@ Exemple : Certains points demandés par le client contrastent avec le gameplay.
 Objectifs :
 - Rencontre avec le client.
 - Revoir ou valider les besoins du client.
+
+Jeudi 12 Juillet :
+- Rencontre avec le client.
+- Validation des besoins du client.
+- Rédaction cahier des charges version 1.1
+- Réflexion sur les personnages.
+
+Problèmes rencontrés :
+- Aucuns.
+
+Objectifs :
+- Prototyper l'environnement.
+- Commencer le développement.
