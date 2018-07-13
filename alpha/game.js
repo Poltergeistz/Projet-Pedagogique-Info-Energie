@@ -46,6 +46,11 @@ var score = 0,
   myHealthBar;
 
 function create() {
+  // Ecran d'astuces
+  var text = ["Débranchez l’ordinateur (même éteint, il consomme de l'électricité)", "1 bain = 5 douches !", "Éteignez la lumière en quittant la pièce"];
+  var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
+  var t = game.add.text(game.world.centerX-300, 0, text, style);
+
   timer = game.time.create();
   //  We're going to be using physics, so enable the Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
