@@ -67,6 +67,6 @@ function out() {
 
 function over() {
 
-    text.fill = '#ff00ff';
+    text.fill = '#f9f9f9';
 
 }
