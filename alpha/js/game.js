@@ -1,3 +1,26 @@
+var score = 0,
+  seat,
+  desk,
+  bed,
+  windowdown,
+  player,
+  platforms,
+  cursors,
+  stars,
+  scoreText,
+  itemacct,
+  ordi,
+  lamp,
+  curtains,
+  spaceKey,
+  timer,
+  timerEvent,
+  myHealthBar;
+
+var player_bounce = 0.0,
+  player_gravity =  1000,
+  player_scale = 1.0;
+
 var game = new Phaser.Game(650, 455, Phaser.AUTO, "", {
   preload: preload,
   create: create,
@@ -26,26 +49,10 @@ function preload() {
   // screens :
   game.load.image("sky2", "assets/gameover.jpg");
 }
-var score = 0,
-  seat,
-  desk,
-  bed,
-  windowdown,
-  player,
-  platforms,
-  cursors,
-  stars,
-  scoreText,
-  itemacct,
-  ordi,
-  lamp,
-  curtains,
-  spaceKey,
-  timer,
-  timerEvent,
-  myHealthBar;
 
 function create() {
+  game.scale.startFullScreen();
+
   timer = game.time.create();
   //  We're going to be using physics, so enable the Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -103,11 +110,12 @@ function create() {
     game.world.height - 150,
     "dude"
   );
+  player.scale.setTo(player_scale);
   //  We need to enable physics on the player
   game.physics.arcade.enable(player);
   //  Player physics properties. Give the little guy a slight bounce.
-  player.body.bounce.y = 0.2;
-  player.body.gravity.y = 400;
+  player.body.bounce.y = player_bounce;
+  player.body.gravity.y = player_gravity;
   player.body.collideWorldBounds = true;
   //  Our two animations, walking left and right.
   player.animations.add("left", [0, 1, 2, 3], 10, true);
