@@ -23,3 +23,25 @@ Mardi 10 Juillet :
 - Conceptualisation.
 - Questions pour le client.
 - Rédaction du cahier des charges.
+- Prise de RDV avec le client pour Jeudi 12, 14h.
+
+Problèmes rencontrés :
+- Aucun.
+
+Objectifs :
+- Terminer le cahier des charges.
+- Définir les niveaux du jeu.
+- Penser à l'intégration des tests unitaires.
+
+Mercredi 11 Juillet :
+- Terminer le cahier des charges.
+- Définir les niveaux du jeu.
+- Réfléchir à des tests.
+
+Problèmes rencontrés :
+- Questions sur le gameplay.
+Exemple : Certains points demandés par le client contrastent avec le gameplay.
+
+Objectifs :
+- Rencontre avec le client.
+- Revoir ou valider les besoins du client.
