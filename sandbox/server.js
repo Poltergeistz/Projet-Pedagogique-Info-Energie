@@ -1,6 +1,4 @@
 let express = require('express');
-let chai = require('chai');
-let mocha = require('mocha');
 let app = express();
 
 app.use(express.static('public'));
