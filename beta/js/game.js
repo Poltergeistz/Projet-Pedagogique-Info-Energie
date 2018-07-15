@@ -21,7 +21,7 @@ var player_bounce = 0.0,
   player_gravity =  1000,
   player_scale = 1.0;
 
-var game = new Phaser.Game(650, 455, Phaser.AUTO, "", {
+var game = new Phaser.Game(650, 455, Phaser.AUTO,"content", {
   preload: preload,
   create: create,
   update: update
