@@ -1,5 +1,6 @@
 let expect = require('mocha').expect;
-let server = require('./server');
+let phaser = require('../public/phaser');
+let server = require('../server');
 let script = require('../public/script');
 
 // Simple Test
