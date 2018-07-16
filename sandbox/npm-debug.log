@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly rollbackFailedOptional Starting
+8 silly rollbackFailedOptional Finishing
+9 silly runTopLevelLifecycles Finishing
+10 silly install printInstalled
+11 verbose stack Error: ENOENT: no such file or directory, lstat '/home/simon/Bureau//sandbox'
+11 verbose stack     at Error (native)
+12 verbose cwd /home/simon/Bureau/Projet-Pedagogique-Info-Energie
+12 verbose cwd /sandbox
+13 error Linux 4.13.0-45-generic
+14 error argv "/usr/bin/nodejs" "/usr/local/bin/npm" "install"
+15 error node v6.11.4
+16 error npm  v3.10.10
+17 error path /home/simon/Bureau//sandbox
+18 error code ENOENT
+19 error errno -2
+20 error syscall lstat
+21 error enoent ENOENT: no such file or directory, lstat '/home/simon/Bureau//sandbox'
+22 error enoent ENOENT: no such file or directory, lstat '/home/simon/Bureau//sandbox'
+22 error enoent This is most likely not a problem with npm itself
+22 error enoent and is related to npm not being able to find a file.
+23 verbose exit [ -2, true ]
