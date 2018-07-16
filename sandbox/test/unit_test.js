@@ -1,14 +1,14 @@
-let expect = require('mocha').expect;
-let server = require('./server');
-let script = require('../public/script');
+let expect = require('chai').expect;
+let request = require('request');
+let server = require('../server');
 
 // Simple Test
-describe('Server is running', function(){
-    it('should display this message when running : Server Ready', function(){
-        let msg = 'Server Ready';
-        let launch = server();
-
-        expect(launch).to.be.equal(launch);
+describe('Server status and content', function(){
+    it('Server should run', function(done){
+        request('http://localhost:8080', function (err, res, body){
+            expect(res.statusCode).to.equal(200);
+            done();
+        })
     })
 })
 

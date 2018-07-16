@@ -71,3 +71,29 @@ Objectifs :
 - Développer les niveaux.
 - Implémenter un écran de titre et des eco-conseils.
 - Créer la page HTML qui accueillera le jeu & les logos.
+
+Samedi 14 Juillet :
+- Design des tableaux.
+- Implémentation de tests unitaires.
+- Page HTML
+
+Problèmes rencontrés :
+- Lier les tests unitaires à Phaser.
+- Problème de dimension des assets (résolu).
+
+Objectifs :
+- Réussir à implémenter les tests unitaires.
+- Finir la page HTML.
+- Continuer a designer les tableaux et les implémenter à Phaser (Si possible).
+- Implémenter l'écran Titre avec un écran de chargement.
+
+Dimanche 15 Juillet :
+- Design des objets dans le niveau du salon.
+- Ecran titre et écran de chargement.
+
+Problèmes rencontrés :
+- Choix du framework.
+- Randomisation des phrases pendant le chargement.
+
+Objectifs :
+- Finir ce qui a été réalisé durant le week-end.
