@@ -97,3 +97,17 @@ Problèmes rencontrés :
 
 Objectifs :
 - Finir ce qui a été réalisé durant le week-end.
+
+Lundi 16 Juillet :
+- Test unitaires sur le serveur NodeJS.
+- Page statique avec Materialize.
+- Design des assets.
+
+Problèmes rencontrés :
+- Programmation des tableaux (niveaux) avec Phaser.
+- Tests unitaires pour Phaser.
+- Responsive design avec Materialize.
+
+Objectifs : 
+- Design des assets.
+- Commencer a programmer les scènes (Salon, salle de bain).
