@@ -13,6 +13,21 @@
 	font-size: inherit;
 }*/
 #content{
-    margin-right: 150px;
+  margin-right: 150px;
 	margin-left: 150px;
 	width: auto;}
+
+body{
+	background: #fff;
+}
+h1{
+	text-align: center;
+}
+#baslog{
+	display: flex;
+		justify-content: space-around;
+}
+#baslog1{
+	display: flex;
+	justify-content: space-around;
+}
