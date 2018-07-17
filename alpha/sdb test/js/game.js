@@ -15,14 +15,14 @@ function preload() {
   game.load.image("sky", "sdb/sky.png");
   // objects :
   game.load.image("double_lavabo", "sdb/sdb_double_lavabo.png");
-  game.load.image("double_lavabo", "sdb/sdb_douche.png");
+  game.load.image("douche", "sdb/sdb_douche.png");
   game.load.image("etagere1", "sdb/sdb_etagere01.png");
   game.load.image("etagere2", "sdb/sdb_etagere02.png");
   game.load.image("meuble", "sdb/sdb_meuble.png");
   game.load.image("peignoire", "sdb/sdb_peignoire.png");
-  game.load.image("double_lavabo", "sdb/sdb_porteserviette.png");
-  game.load.image("double_lavabo", "sdb/sdb_toilettes.png");
-  game.load.image("double_lavabo", "sdb/sdb_pq.png");
+  game.load.image("porteserviette", "sdb/sdb_porteserviette.png");
+  game.load.image("toilettes", "sdb/sdb_toilettes.png");
+  game.load.image("pq", "sdb/sdb_pq.png");
 }
 
 function create() {
@@ -35,7 +35,18 @@ function create() {
 
   //  A simple background for our game
   game.add.sprite(0, 0, "sky");
-  game.add.sprite(400 - 64, 450 - 64, "double_lavabo");
+
+  game.add.sprite(50, 300, "etagere1");
+  game.add.sprite(650, 300, "etagere2");
+
+  game.add.sprite(100, 400, "meuble");
+  game.add.sprite(200, 400, "douche");
+  game.add.sprite(300, 400, "porteserviette");
+  game.add.sprite(400 - 64, 400, "double_lavabo");
+  game.add.sprite(500, 350, "peignoire");
+  game.add.sprite(600, 450, "toilettes");
+  game.add.sprite(700, 450, "pq");
+
   // var pour objets interactifs
   // itemacct = game.add.group();
   // itemacct.enableBody = true;
