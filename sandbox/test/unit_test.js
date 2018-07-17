@@ -8,10 +8,16 @@ describe('Server status and content', function(){
         request('http://localhost:8080', function (err, res, body){
             expect(res.statusCode).to.equal(200);
             done();
-        })
-    })
-})
-
+        });
+    });
+    it('Should display content', function(done){
+        request('http://localhost:8080', function (err, res, body){
+            expect(res.body).to.exist;
+            done();
+        });
+    });
+});
+/* Phaser unit testing = BAD IDEA
 // Test for loading screen
 describe('loading', function(){
     it('should load the menu after loading screen', function(){
@@ -20,7 +26,7 @@ describe('loading', function(){
     // more parameters to test using "it" for this test.
     it('should display tips randomly', function(){
         // Test implementations
-    })
+    });
 });
 
 // Test for next scene
@@ -37,4 +43,4 @@ describe('pickup the correct ingredient', function(){
         // Test implementations
     });
     // more parameters to test using "it" for this test.
-});
+}); */
