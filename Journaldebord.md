@@ -124,11 +124,12 @@ Objectifs :
 - Gameplay.
 - Continuer le developpement du jeu.
 
-Mecredi 18 Juillet :
-- 
+Mercredi 18 Juillet :
+- Documentation.
+- Design asset.
 
 Problèmes rencontrés :
-- 
+- Fonctionnalités en lien avec le gameplay.
 
 Objectifs :
-- 
+- Continuer le developpement du jeu.
