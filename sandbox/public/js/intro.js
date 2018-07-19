@@ -11,13 +11,13 @@ var introState = {
 	},
 
 	create: function(){
+		function delay(){
+            setTimeout(function(){game.state.start('salon')},2000);
+        }
+        delay();
     },
 
     update: function(){
 
 	},
-
-    win: function(){
-        // game.state.start('win');
-    }
 }
