@@ -133,3 +133,14 @@ Problèmes rencontrés :
 
 Objectifs :
 - Continuer le developpement du jeu.
+
+Jeudi 19 Juillet : 
+- Développement des niveaux.
+- Intégration des états.
+- Design d'assets
+
+Problèmes rencontrés :
+- Aucuns.
+
+Objectifs :
+- Finir d'assembler les niveaux entre eux.
