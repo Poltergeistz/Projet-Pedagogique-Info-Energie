@@ -111,3 +111,25 @@ Problèmes rencontrés :
 Objectifs : 
 - Design des assets.
 - Commencer a programmer les scènes (Salon, salle de bain).
+
+Mardi 17 Juillet : 
+- Intégration des assets dans phaser pour le salon et la salle de bain.
+- Page HTML.
+- Asset salon.
+
+Problèmes rencontrés : 
+- Game state (Resolu).
+
+Objectifs :
+- Gameplay.
+- Continuer le developpement du jeu.
+
+Mercredi 18 Juillet :
+- Documentation.
+- Design asset.
+
+Problèmes rencontrés :
+- Fonctionnalités en lien avec le gameplay.
+
+Objectifs :
+- Continuer le developpement du jeu.
