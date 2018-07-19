@@ -32,6 +32,7 @@ function preload() {
   game.load.image("fenetre","salon/salon_fenetre.png");
   game.load.image("porte","salon/salon_porte.png");
   game.load.image("tv","salon/salon_tv.png");
+  // game.load.sprite("ecokid", "assets/character/hero_sprite.png", 32, 45);
 }
 
 function create() {
@@ -52,9 +53,10 @@ function create() {
   game.add.sprite(100,450,"chaise");
   game.add.sprite(270,450,"chaise").scale.x*=-1;
   game.add.sprite(200,380,"etagere3");
-  game.add.sprite(485,380,"fenetre");
+  game.add.sprite(420,380,"fenetre");
   game.add.sprite(400 - 64, 450 - 64,"porte");
   game.add.sprite(150,450,"tv");
+  // game.add.sprite(100, 300, "ecokid", "assets/character/hero_sprite.png");
 
   // var pour objets interactifs
   // itemacct = game.add.group();
@@ -105,4 +107,8 @@ function disapearlamp(player, lamp) {
 
 function gameOver() {
   game.add.sprite(0, 0, "sky2");
+}
+
+function render(){
+  game.debug.body("lamp");
 }
