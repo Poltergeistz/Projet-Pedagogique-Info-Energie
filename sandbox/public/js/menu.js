@@ -1,6 +1,6 @@
 var menuState = {
     create: function(){
-        var nameLabel = game.add.text(80, 80, 'My first game',{ font: '50px Arial', fill: '#ffffff'});
+        var nameLabel = game.add.text(300, 220, 'Ecokid',{ font: '50px Arial', fill: '#ffffff'});
 
         var startLabel = game.add.text(80, game.world.height-80, 'press the "W" key to start',{ font: '25px Arial', fill: '#ffffff'});
 

@@ -53,7 +53,7 @@ function create() {
   game.add.sprite(100,450,"chaise");
   game.add.sprite(270,450,"chaise").scale.x*=-1;
   game.add.sprite(200,380,"etagere3");
-  game.add.sprite(485,380,"fenetre");
+  game.add.sprite(420,380,"fenetre");
   game.add.sprite(400 - 64, 450 - 64,"porte");
   game.add.sprite(150,450,"tv");
   // game.add.sprite(100, 300, "ecokid", "assets/character/hero_sprite.png");
