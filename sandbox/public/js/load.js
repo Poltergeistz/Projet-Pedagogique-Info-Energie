@@ -24,6 +24,9 @@ var loadState = {
         game.load.image("fenetre", "assets/levels/salon/salon_fenetre.png");
         game.load.image("porte", "assets/levels/salon/salon_porte.png");
         game.load.image("tv", "assets/levels/salon/salon_tv.png");
+
+        // Hero
+        //game.load.spritesheet("ecokid", "assets/character/hero_sprite.png", 32, 45);
     },
     create: function(){
         game.state.start('menu');
