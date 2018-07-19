@@ -3,6 +3,8 @@ var loadState = {
 
         var loadingLabel = game.add.text(80, 150, 'Loading...', { font: '30px Courier', fill: '#ffffff' });
 
+        // // UI
+        // game.load.image("button", "assets/ui/btn_loading.png");
         // Sky
         game.load.image("sky", "assets/levels/sdb/sky.png");
         // Salle de bain :
@@ -14,7 +16,7 @@ var loadState = {
         game.load.image("peignoire", "assets/levels/sdb/sdb_peignoire.png");
         game.load.image("serviette", "assets/levels/sdb/sdb_porteserviette.png");
         game.load.image("toilettes", "assets/levels/sdb/sdb_toilettes.png");
-        game.load.image("pq", "assets/levels/sdb/sdb_pq.png");
+        game.load.image("pq", "assets/levels/sdb/sdb_pq_png");
 
         // Salon
         game.load.image("buffet", "assets/levels/salon/salon_buffet.png");
