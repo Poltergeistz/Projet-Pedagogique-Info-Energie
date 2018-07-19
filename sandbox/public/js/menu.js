@@ -7,7 +7,7 @@ var menuState = {
     	console.log("preload: ");
 
     	game.load.spritesheet('button', 'assets/ui/btn_loading.png', 195, 32);
-    	game.load.image('background','assets/misc/starfield.jpg');
+    	// game.load.image('background','assets/misc/starfield.jpg');
         var nameLabel = game.add.text(80, 80, 'My first game',{ font: '50px Arial', fill: '#ffffff'});
         // var startLabel = game.add.text(80, game.world.height-80, 'press the "enter" key to start',{ font: '25px Arial', fill: '#ffffff'});
     },
