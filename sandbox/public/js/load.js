@@ -41,7 +41,7 @@ var loadState = {
         // Sky
         game.load.image("sky", "assets/levels/background/sky.png");
         // Salle de bain :
-        game.load.image("double_lavabo", "assets/levels/sdb/sdb_double_lavabo.png");
+        game.load.image("double_lavabo", "assets/levels/sdb/sdb_doublelavabo.png");
         game.load.image("douche", "assets/levels/sdb/sdb_douche.png");
         game.load.image("etagere1", "assets/levels/sdb/sdb_etagere01.png");
         game.load.image("etagere2", "assets/levels/sdb/sdb_etagere02.png");

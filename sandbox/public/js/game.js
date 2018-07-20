@@ -6,7 +6,7 @@ game.state.add('menu', menuState);
 // game.state.add('play', playState);
 
 game.state.add('intro', introState);
-// game.state.add('salon', salonState);
+game.state.add('salon', salonState);
 
 game.state.add('win', winState);
 
