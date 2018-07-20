@@ -39,7 +39,7 @@ var loadState = {
         // // UI
         // game.load.image("button", "assets/ui/btn_loading.png");
         // Sky
-        game.load.image("sky", "assets/levels/sdb/sky.png");
+        game.load.image("sky", "assets/levels/background/sky.png");
         // Salle de bain :
         game.load.image("double_lavabo", "assets/levels/sdb/sdb_double_lavabo.png");
         game.load.image("douche", "assets/levels/sdb/sdb_douche.png");
@@ -49,7 +49,7 @@ var loadState = {
         game.load.image("peignoire", "assets/levels/sdb/sdb_peignoire.png");
         game.load.image("serviette", "assets/levels/sdb/sdb_porteserviette.png");
         game.load.image("toilettes", "assets/levels/sdb/sdb_toilettes.png");
-        game.load.image("pq", "assets/levels/sdb/sdb_pq_png");
+        game.load.image("pq", "assets/levels/sdb/sdb_pq.png");
 
         // Salon
         game.load.image("buffet", "assets/levels/salon/salon_buffet.png");
@@ -61,7 +61,7 @@ var loadState = {
         game.load.image("tv", "assets/levels/salon/salon_tv.png");
 
         // Hero
-        //game.load.spritesheet("ecokid", "assets/character/hero_sprite.png", 32, 45);
+        game.load.spritesheet("ecokid", "assets/character/hero_sprite2.png", 562, 74, 9);
     },
     create: function () {
         function delay(){
