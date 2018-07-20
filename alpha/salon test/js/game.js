@@ -32,7 +32,7 @@ function preload() {
   game.load.image("fenetre","salon/salon_fenetre.png");
   game.load.image("porte","salon/salon_porte.png");
   game.load.image("tv","salon/salon_tv.png");
-  // game.load.sprite("ecokid", "assets/character/hero_sprite.png", 32, 45);
+  game.load.spritesheet("ecokid", "assets/character/hero_sprite2.png", 562, 74, 9)
 }
 
 function create() {
@@ -56,7 +56,9 @@ function create() {
   game.add.sprite(420,380,"fenetre");
   game.add.sprite(400 - 64, 450 - 64,"porte");
   game.add.sprite(150,450,"tv");
-  // game.add.sprite(100, 300, "ecokid", "assets/character/hero_sprite.png");
+  this.hero = game.add.spritesheet(200, 300, "ecokid");
+  this.hero.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9], 12, true);
+  this.hero.animations.play('walk');
 
   // var pour objets interactifs
   // itemacct = game.add.group();
