@@ -17,6 +17,16 @@ var salonState = {
         game.add.sprite(420,380,"fenetre");
         game.add.sprite(400 - 64, 450 - 64,"porte");
         game.add.sprite(150,450,"tv");
+
+        // Hero
+
+        this.hero = game.add.spritesheet(400, 400, "ecokid");
+        this.hero.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9], 12, true);
+        this.hero.animations.play('walk');
+
+        // Collision
+
+        //myHeroSprite.body.collideWorldBounds=true;
     },
 
     // If the player successfully finds all objects -  Then
