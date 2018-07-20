@@ -18,6 +18,10 @@ var sdbState = {
         game.add.sprite(600, 450, "toilettes");
         game.add.sprite(700, 450, "pq");
 
+        // Collision
+
+        //myHeroSprite.body.collideWorldBounds=true;
+
     },
     update: function(){
         game.state.start('chambre');
