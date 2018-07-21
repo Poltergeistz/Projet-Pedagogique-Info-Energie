@@ -1,3 +1,5 @@
+var sdb_time = 5;
+
 var sdbState = {
 
     create: function () {
@@ -12,7 +14,7 @@ var sdbState = {
         game.add.sprite(650, 300, "etagere2");
         game.add.sprite(100, 400, "meuble");
         game.add.sprite(200, 400, "douche");
-        game.add.sprite(300, 400, "porteserviette");
+        game.add.sprite(300, 400, "serviette");
         game.add.sprite(400 - 64, 400, "double_lavabo");
         game.add.sprite(500, 350, "peignoire");
         game.add.sprite(600, 450, "toilettes");
@@ -20,7 +22,7 @@ var sdbState = {
 
     },
     update: function(){
-        game.state.start('chambre');
+        // game.state.start('chambre');
     }
 
 }

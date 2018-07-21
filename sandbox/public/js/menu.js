@@ -7,9 +7,11 @@ var menuState = {
         var nameLabel = game.add.text(80, 80, 'My first game',{ font: '50px Arial', fill: '#ffffff'});
     },
     create: function(){
+        game.add.sprite(0, 0, "sky");
 	    button = game.add.button(game.world.centerX - 95, 400, 'button', this.onUp, this, 1, 0, 1);
 	},
     update: function(){
+    
     },
 
 	onUp: function () {

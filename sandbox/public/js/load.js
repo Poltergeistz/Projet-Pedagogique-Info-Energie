@@ -1,5 +1,23 @@
+var timer, energyBar;
+
+function render() {
+  // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
+  if (timer.running) {
+    game.debug.text(
+      Math.round((timerEvent.delay - timer.ms) / 1000),
+      2,
+      14,
+      "#ff0"
+    );
+  } else {
+    game.debug.text("Done!", 2, 14, "#0f0");
+  }
+}
+
 var loadState = {
     preload: function () {
+
+        var lvl1_power, lvl2_power, lvl3_power, lvl4_power = 50;
 
         // Array of Text
         var text = ["Éteignez la lumière en quittant la pièce",
@@ -39,17 +57,17 @@ var loadState = {
         // // UI
         // game.load.image("button", "assets/ui/btn_loading.png");
         // Sky
-        game.load.image("sky", "assets/levels/sdb/sky.png");
+        game.load.image("sky", "assets/levels/sky.png");
         // Salle de bain :
         game.load.image("double_lavabo", "assets/levels/sdb/sdb_doublelavabo.png");
         game.load.image("douche", "assets/levels/sdb/sdb_douche.png");
         game.load.image("etagere1", "assets/levels/sdb/sdb_etagere01.png");
         game.load.image("etagere2", "assets/levels/sdb/sdb_etagere02.png");
         game.load.image("meuble", "assets/levels/sdb/sdb_meuble.png");
-        game.load.image("peignoire", "assets/levels/sdb/sdb_peignoire.png");
+        game.load.image("peignoire", "assets/levels/sdb/sdb_peignoir.png");
         game.load.image("serviette", "assets/levels/sdb/sdb_porteserviette.png");
         game.load.image("toilettes", "assets/levels/sdb/sdb_toilettes.png");
-        game.load.image("pq", "assets/levels/sdb/sdb_pq_png");
+        game.load.image("pq", "assets/levels/sdb/sdb_pq.png");
 
         // Salon
         game.load.image("buffet", "assets/levels/salon/salon_buffet.png");
