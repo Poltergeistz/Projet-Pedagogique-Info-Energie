@@ -20,9 +20,33 @@ var sdbState = {
         game.add.sprite(600, 450, "toilettes");
         game.add.sprite(700, 450, "pq");
 
-    },
-    update: function(){
-        // game.state.start('chambre');
-    }
+
+        //  The score
+        timer = game.time.create();
+        timerEvent = timer.add(Phaser.Timer.SECOND * sdb_time, this.gameOver, this);
+        timer.start();
+        energyBar = new HealthBar(this.game, {
+          width: 150,
+          height: 10,
+          x: 560,
+          y: 15,
+          bg: { color: "#651828" },
+          bar: { color: "#FEFF03" },
+          animationDuration: 200,
+          flipped: false
+        });
+        energyBar.setPercent(100);
+
+  },
+  update: function(){
+
+  },
+
+  gameOver: function () {
+    console.log("This is the end. My friends. The end !");
+    // chargement du niveau suivant.
+    game.state.start('sdb');
+
+  },
 
 }
