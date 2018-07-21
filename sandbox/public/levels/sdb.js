@@ -43,9 +43,8 @@ var sdbState = {
   },
 
   gameOver: function () {
-    console.log("This is the end. My friends. The end !");
     // chargement du niveau suivant.
-    game.state.start('sdb');
+    game.state.start('menu');
 
   },
 

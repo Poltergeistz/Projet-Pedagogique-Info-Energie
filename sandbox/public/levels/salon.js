@@ -68,9 +68,8 @@ var salonState = {
   },
 
   gameOver: function () {
-    console.log("This is the end. My friends. The end !");
     // chargement du niveau suivant.
-    game.state.start('sdb');
+    game.state.start('sdb_load');
 
   },
 
