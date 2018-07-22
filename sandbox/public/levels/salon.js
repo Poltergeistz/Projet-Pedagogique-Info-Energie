@@ -3,6 +3,8 @@ var salonState = {
     // Create the Level 
     create: function(){
 
+        game.world.setBounds(0, 0, 800, 600);
+
         // Background
         game.add.sprite(0, 0, "sky");
 
@@ -21,7 +23,7 @@ var salonState = {
         // Hero
 
         this.hero = game.add.spritesheet(400, 400, "ecokid");
-        this.hero.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9], 12, true);
+        this.hero.animations.add('walk', [0, 1, 2], 12, true);
         this.hero.animations.play('walk');
 
         // Collision
@@ -36,6 +38,28 @@ var salonState = {
  
     // Else highlight elements that the player haven't found and move to the next level.
     update: function(){
+
+
+        if (cursors.left.isDown)
+    {
+		// myHeroSprite.body.moveLeft(200);
+    }
+    else if (cursors.right.isDown)
+    {
+		// myHeroSprite.body.moveRight(200);
+    }
+
+    if (cursors.up.isDown)
+    {
+    	// myHeroSprite.body.moveUp(200);
+    }
+    else if (cursors.down.isDown)
+    {
+        // myHeroSprite.body.moveDown(200);
+    }
+
+
+
         game.state.start('sdb');
     }
 
