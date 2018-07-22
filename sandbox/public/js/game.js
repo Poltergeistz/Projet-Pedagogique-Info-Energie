@@ -7,6 +7,8 @@ game.state.add('menu', menuState);
 
 game.state.add('intro', introState);
 game.state.add('salon', salonState);
+game.state.add('sdb_load', sdbLoadState);
+game.state.add('sdb', sdbState);
 
 game.state.add('win', winState);
 

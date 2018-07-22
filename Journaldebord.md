@@ -156,3 +156,24 @@ Objectifs :
 - Finir le système de barre d'énérgie.
 - Travailler sur la collision des objets.
 - Faire des tests sur l'intégration du personnage.
+
+Samedi 21 Juillet :
+- Implémentation de la barre d'énérgie.
+- Intégration du personnage. (En cours)
+
+Problèmes rencontrés :
+- Problème système sur l'ordinateur de Simon
+
+Objectifs : 
+- Finir le système de barre d'énérgie.
+- Travailler sur la collision des objets.
+- Continuer les tests sur l'intégration du personnage.
+
+Dimanche 22 Juillet :
+- Terminer l'intégration du personnage.
+- Gerer la collision.
+- Deployer en ligne.
+
+Problèmes rencontrés :
+- 
+
