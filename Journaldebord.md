@@ -144,3 +144,15 @@ Problèmes rencontrés :
 
 Objectifs :
 - Finir d'assembler les niveaux entre eux.
+
+Vendredi 20 Juillet :
+- Implémentation de la barre d'énérgie.
+- Intégration du personnage. (En cours)
+
+Problèmes rencontrés :
+- Ajout d'une spritesheet de personnage.
+
+Objectifs : 
+- Finir le système de barre d'énérgie.
+- Travailler sur la collision des objets.
+- Faire des tests sur l'intégration du personnage.
