@@ -83,7 +83,7 @@ var loadState = {
     },
     create: function () {
         function delay(){
-            setTimeout(function(){game.state.start('menu')},2000);
+            setTimeout(function(){game.state.start('menu')},5000);
         }
         delay();
     }
