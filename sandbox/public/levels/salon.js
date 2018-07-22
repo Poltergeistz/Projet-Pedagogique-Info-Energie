@@ -29,17 +29,22 @@ var salonState = {
         game.add.sprite(400 - 64, 450 - 64, "porte");
         game.add.sprite(150, 450, "tv");
 
-        /*
+
         // Capture input from user 
-        var cursor = game.input.keyboard.createCursorKeys();
+        var cursors = game.input.keyboard.createCursorKeys();
 
         // Create the player inside the lvl
-        var player = game.add.sprite(70, 100, 'ecokid');
+        var player = game.add.sprite(32, game.world.height - 150, 'ecokid');
+        game.physics.arcade.enable(player);
 
-        // Add gravity to make it fall
-        player.body.gravity.y = 600;
-        */
+        // Add gravity
+        player.body.bounce.y = 0.2;
+        player.body.gravity.y = 800;
+        player.body.collideWorldBounds = true;
 
+        // Animations
+        player.animations.add('left', [0, 1], 10, true);
+        player.animations.add('right', [2, 3], 10, true);
 
         //  The platforms group contains the ground and the 2 ledges we can jump on
         var platforms = game.add.group();
@@ -63,50 +68,75 @@ var salonState = {
         ledge = platforms.create(270, 450, "ground");
         ledge.body.immovable = true; */
 
-        // player.body.collideWorldBounds = true;
 
 
         //  The score
-    timer = game.time.create();
-    timerEvent = timer.add(Phaser.Timer.SECOND * salon_time, this.gameOver, this);
-    timer.start();
-    energyBar = new HealthBar(this.game, {
-      width: 150,
-      height: 10,
-      x: 560,
-      y: 15,
-      bg: { color: "#651828" },
-      bar: { color: "#FEFF03" },
-      animationDuration: 200,
-      flipped: false
-    });
-    energyBar.setPercent(100);
+        timer = game.time.create();
+        timerEvent = timer.add(Phaser.Timer.SECOND * salon_time, this.gameOver, this);
+        timer.start();
+        energyBar = new HealthBar(this.game, {
+            width: 150,
+            height: 10,
+            x: 560,
+            y: 15,
+            bg: { color: "#651828" },
+            bar: { color: "#FEFF03" },
+            animationDuration: 200,
+            flipped: false
+        });
+        energyBar.setPercent(100);
 
-  },
-  update: function(){
+    },
+    update: function () {
+  /* Probleme de scope pour la variable player et cursors
+        // When player stop moving
+        player.body.velocity.x = 0
+  
+      // Setup collisions for the player and platforms
+      game.physics.arcade.collide(player, platforms)
+  
+      // Controls
+      if (cursors.left.isDown) {
+      player.body.velocity.x = -150
+  
+      player.animations.play('left')
+          } else if (cursors.right.isDown) {
+      player.body.velocity.x = 150
+  
+      player.animations.play('right')
+          } else {
+      // If no movement keys are pressed, stop the player
+      player.animations.stop()
+      }
+  
+      //  This allows the player to jump!
+    if (cursors.up.isDown && player.body.touching.down) {
+      player.body.velocity.y = -400
+  }
+  */
 
-  },
+    },
 
-  gameOver: function () {
-    // chargement du niveau suivant.
-    game.state.start('sdb_load');
+    gameOver: function () {
+        // chargement du niveau suivant.
+        game.state.start('sdb_load');
 
-  },
+    },
 
- disapearlamp: function (player, lamp) {
-    if (spaceKey.isDown) {
-      lamp.kill();
-      score++;
+    disapearlamp: function (player, lamp) {
+        if (spaceKey.isDown) {
+            lamp.kill();
+            score++;
+        }
+        if (score == 3) {
+            this.gameOver();
+        }
+
     }
-    if (score == 3) {
-      this.gameOver();
-    }
 
-}
-
-// var game = new Phaser.Game(800, 600, Phaser.AUTO, "", {
-//   preload: preload,
-//   create: create,
-//   update: update
-// });
+    // var game = new Phaser.Game(800, 600, Phaser.AUTO, "", {
+    //   preload: preload,
+    //   create: create,
+    //   update: update
+    // });
 }
