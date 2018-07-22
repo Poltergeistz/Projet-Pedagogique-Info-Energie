@@ -9,11 +9,13 @@ var salon_time = 5;
 var salonState = {
     preload: function () {
 
+        game.load.image("ground", "assets/levels/ground.png");
+        game.load.image("backg", "assets/levels/backg.png");
     },
     create: function () {
 
         // Background
-        game.add.sprite(0, 0, "sky");
+        game.add.sprite(0, 0, "backg");
 
         // House
 
@@ -45,67 +47,59 @@ var salonState = {
         platforms.enableBody = true;
 
         // Here we create the ground.
-        var ground = platforms.create(0, game.world.height - 15, "ground");
+        var ground = platforms.create(0, game.world.height - 87, "ground");
+
         //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-        ground.scale.setTo(2, 2);
+        ground.scale.setTo(1, 6);
 
         //  This stops it from falling away when you jump on it
         ground.body.immovable = true;
 
+        /*
         // Ledges
         var ledge = platforms.create(100, 450, "ground");
         ledge.body.immovable = true;
 
         ledge = platforms.create(270, 450, "ground");
-        ledge.body.immovable = true;
+        ledge.body.immovable = true; */
 
         // player.body.collideWorldBounds = true;
 
 
         //  The score
-        timer = game.time.create();
-        timerEvent = timer.add(Phaser.Timer.SECOND * salon_time, this.gameOver, this);
-        timer.start();
-        energyBar = new HealthBar(this.game, {
-            width: 150,
-            height: 10,
-            x: 560,
-            y: 15,
-            bg: { color: "#651828" },
-            bar: { color: "#FEFF03" },
-            animationDuration: 200,
-            flipped: false
-        });
-        energyBar.setPercent(100);
+    timer = game.time.create();
+    timerEvent = timer.add(Phaser.Timer.SECOND * salon_time, this.gameOver, this);
+    timer.start();
+    energyBar = new HealthBar(this.game, {
+      width: 150,
+      height: 10,
+      x: 560,
+      y: 15,
+      bg: { color: "#651828" },
+      bar: { color: "#FEFF03" },
+      animationDuration: 200,
+      flipped: false
+    });
+    energyBar.setPercent(100);
 
-    },
-    update: function () {
-        /*
-        // Move the player when an arrow key is pressed
-        if (cursor.left.isDown)
-            player.body.velocity.x = -200;
-        else if (cursor.right.isDown)
-            player.body.velocity.x = 200;
-        else
-            player.body.velocity.x = 0;
-            */
+  },
+  update: function(){
 
-    },
+  },
 
-    gameOver: function () {
-        // chargement du niveau suivant.
-        game.state.start('sdb_load');
+  gameOver: function () {
+    // chargement du niveau suivant.
+    game.state.start('sdb_load');
 
-    },
+  },
 
-    disapearlamp: function (player, lamp) {
-        if (spaceKey.isDown) {
-            lamp.kill();
-            score++;
-        }
-        if (score == 3) {
-            this.gameOver();
-        }
+ disapearlamp: function (player, lamp) {
+    if (spaceKey.isDown) {
+      lamp.kill();
+      score++;
+    }
+    if (score == 3) {
+      this.gameOver();
     }
 
 }
@@ -115,3 +109,4 @@ var salonState = {
 //   create: create,
 //   update: update
 // });
+}
