@@ -79,7 +79,7 @@ var loadState = {
         game.load.image("tv", "assets/levels/salon/salon_tv.png");
 
         // Hero
-        game.load.spritesheet("ecokid", "assets/character/testsprite.png", 288, 48);
+        game.load.spritesheet("ecokid", "assets/character/testsprite.png", 32, 32);
     },
     create: function () {
         function delay(){
