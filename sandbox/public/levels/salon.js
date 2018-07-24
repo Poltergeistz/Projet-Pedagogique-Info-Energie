@@ -10,7 +10,6 @@ var salonState = {
   preload: function() {
     game.load.image("ground", "assets/levels/ground.png");
     game.load.image("backg", "assets/levels/backg.png");
-    game.load.spritesheet("ecokid", "assets/character/hero_sprite2.png", 62, 48);
   },
   create: function() {
     // Background
@@ -37,7 +36,7 @@ var salonState = {
     game.add.sprite(100, 450, "chaise");
     game.add.sprite(270, 450, "chaise").scale.x *= -1;
     game.add.sprite(200, 380, "etagere3");
-    game.add.sprite(420, 380, "fenetre");
+    game.add.sprite(450, 330, "fenetre");
     game.add.sprite(400 - 64, 450 - 64, "porte");
     game.add.sprite(150, 450, "tv");
 
@@ -87,7 +86,7 @@ var salonState = {
   },
   update: function() {
     game.physics.arcade.collide(player, platforms);
-    game.debug.body(player);
+    // game.debug.body(player);
     
         // When player stop moving
         player.body.velocity.x = 0

@@ -17,6 +17,8 @@ function render() {
 var loadState = {
     preload: function () {
 
+
+
         var lvl1_power, lvl2_power, lvl3_power, lvl4_power = 50;
 
         // Array of Text
@@ -56,6 +58,8 @@ var loadState = {
 
         // // UI
         // game.load.image("button", "assets/ui/btn_loading.png");
+        // PLayer
+        game.load.spritesheet("ecokid", "assets/character/hero_sprite2.png", 28, 48);
         // Sky
         game.load.image("sky", "assets/levels/sky.png");
         // Salle de bain :
