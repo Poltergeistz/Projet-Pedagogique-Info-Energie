@@ -15,7 +15,7 @@ var introState = {
 
 	create: function(){
 		function delay(){
-            setTimeout(function(){game.state.start('salon')},3500);
+            setTimeout(function(){game.state.start('salon')},35);
         }
         delay();
     },
