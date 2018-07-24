@@ -53,8 +53,7 @@ var salonState = {
     player.body.collideWorldBounds = true;
 
     // Animations
-    player.animations.add("left", [0, 1], 10, true);
-    player.animations.add("right", [2, 3], 10, true);
+    player.animations.add("walk", [0,1,2,3,4,5,6,7,8], 15, true);
 
     /*
         // Ledges
@@ -93,13 +92,15 @@ var salonState = {
   
       // Controls
       if (cursors.left.isDown) {
-      player.body.velocity.x = -150
-  
-      player.animations.play('left')
+      player.body.velocity.x = -150;
+      player.scale.setTo(-1, 1); // flip to left
+
+      player.animations.play('walk');
           } else if (cursors.right.isDown) {
-      player.body.velocity.x = 150
+      player.body.velocity.x = 150;
+      player.scale.setTo(1, 1); // flip to right
   
-      player.animations.play('right')
+      player.animations.play('walk');
           } else {
       // If no movement keys are pressed, stop the player
       player.animations.stop()
