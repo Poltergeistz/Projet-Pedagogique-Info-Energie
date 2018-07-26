@@ -23,5 +23,7 @@ var introState = {
     }, 5000);
   },
 
-  update: function() {}
+  update: function() {
+      
+  }
 };
