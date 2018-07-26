@@ -22,7 +22,8 @@ function render() {
 var salon_time = 30;
 
 var chair, chair2, tv;
-
+var score = 0;
+var lampEteinte = false;
 var salonState = {
   preload: function() {
     game.load.image("ground", "assets/levels/ground.png");
@@ -49,7 +50,10 @@ var salonState = {
 
     // Salon sprites
     game.add.sprite(650, 450, "buffet");
-    game.add.sprite(650, 418, "lamp");
+    lamp = game.add.sprite(650, 418, "lamp");
+    game.physics.arcade.enable(lamp);
+    lamp.body.immovable = true;
+    spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     //lampe
     // game.add.sprite(100, 450, "chaise");
     chair = platforms.create(100, 450, "chaise");
@@ -58,8 +62,9 @@ var salonState = {
     // game.add.sprite(270, 450, "chaise").scale.x *= -1;
     game.add.sprite(200, 380, "etagere3");
     game.add.sprite(450, 330, "fenetre");
-    game.add.sprite(400 - 64, 450 - 64, "porte");
-    tv = game.add.sprite(150, 450, "tv");
+    porte = game.add.sprite(400 - 64, 450 - 64, "porte");
+    game.physics.arcade.enable(porte);
+    game.add.sprite(150, 450, "tv");
 
     // Capture input from user
     cursors = game.input.keyboard.createCursorKeys();
@@ -108,6 +113,8 @@ var salonState = {
     energyBar.setPercent(((timer.duration * 100) / salon_time) * 1000);
 
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
+    game.physics.arcade.overlap(player, porte,this.CollidePorte,null, this);
     // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
     tv.animations.play("tv");
@@ -133,19 +140,37 @@ var salonState = {
     }
   },
 
+  CollidePorte: function (obj1, obj2) {
+    if(lampEteinte == true){
+      console.log("prend la porte!!!");
+      porte.kill();
+      game.state.start("sdb_load");
+    }
+    
+    //  This function can perform your own additional checks on the 2 objects that collided.
+    //  For example you could test for velocity, health, etc.
+    //  This function needs to return either true or false. If it returns true then collision carries on (separating the two objects).
+    //  If it returns false the collision is assumed to have failed and aborts, no further checks or separation happen.
+
+    console.log("collision!!");
+
+  },
+
   gameOver: function() {
     // chargement du niveau suivant.
     game.state.start("sdb_load");
   },
 
   disapearlamp: function(player, lamp) {
+    console.log("eteint la lamp");
     if (spaceKey.isDown) {
       lamp.kill();
+      lampEteinte = true;
       score++;
     }
-    if (score == 3) {
-      this.gameOver();
-    }
+    // if (score == 3) {
+    //   this.gameOver();
+    // }
   }
 
   // var game = new Phaser.Game(800, 600, Phaser.AUTO, "", {
