@@ -57,6 +57,17 @@ var loadState = {
     game.load.image("ground", "assets/levels/ground.png");
     game.load.image("backg", "assets/levels/backg.png");
     game.load.image("sky", "assets/levels/sky.png");
+    // chambre
+    game.load.image("bureau", "assets/levels/chambre/chambre_bureau.png");
+    game.load.image("ordi", "assets/levels/chambre/chambre_computeur.png");
+    game.load.image("ordi_active", "assets/levels/chambre/chambre_computeur_active.png");
+    game.load.image("clock", "assets/levels/chambre/chambre_clock.png");
+    game.load.image("ch_fenetre", "assets/levels/chambre/fenetre_closed.png");
+    game.load.image("ch_fenetre_active", "assets/levels/chambre/chambre_fenetre.png");
+    game.load.image("lampe", "assets/levels/chambre/chambre_lampe.png");
+    game.load.image("lampe_active", "assets/levels/chambre/chambre_lampe_active.png");
+    game.load.image("lit", "assets/levels/chambre/chambre_lit.png");
+
     // Salle de bain :
     game.load.image("double_lavabo", "assets/levels/sdb/sdb_doublelavabo.png");
     game.load.image("douche", "assets/levels/sdb/sdb_douche.png");
@@ -92,7 +103,7 @@ var loadState = {
   create: function() {
     function delay() {
       setTimeout(function() {
-        game.state.start("salon");
+        game.state.start("menu");
       }, load_time);
     }
     delay();
