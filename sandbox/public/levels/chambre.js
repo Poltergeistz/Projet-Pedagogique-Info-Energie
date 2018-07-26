@@ -1,7 +1,6 @@
-var sdb_time = 30;
+var chambre_time = 30;
 var timer, energyBar;
-
-var sdbState = {
+var chambreState = {
 
     create: function () {
 
@@ -24,7 +23,7 @@ var sdbState = {
 
         //  The score
         timer = game.time.create();
-        timerEvent = timer.add(Phaser.Timer.SECOND * sdb_time, this.gameOver, this);
+        timerEvent = timer.add(Phaser.Timer.SECOND * chambre_time, this.gameOver, this);
         timer.start();
         energyBar = new HealthBar(this.game, {
           width: 150,
@@ -40,7 +39,7 @@ var sdbState = {
 
   },
   update: function(){
-      energyBar.setPercent((timer.duration * 100) / (sdb_time * 1000));
+      energyBar.setPercent((timer.duration * 100) / (chambre_time * 1000));
   },
 
   gameOver: function () {
