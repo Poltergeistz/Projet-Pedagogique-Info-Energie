@@ -103,7 +103,7 @@ var loadState = {
   create: function() {
     function delay() {
       setTimeout(function() {
-        game.state.start("chambre");
+        game.state.start("menu");
       }, load_time);
     }
     delay();

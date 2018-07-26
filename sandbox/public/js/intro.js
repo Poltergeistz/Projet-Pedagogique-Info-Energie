@@ -11,18 +11,21 @@ var introState = {
 
     var nameLabel = game.add.text(
       80,
-      80,
-      `Le pitch sur le professeur energeox
-      
-      Peut etre un texte défilant à la star wars ?
-      Ou
-      Unbackground defilant`,
-      { font: "30px Arial", fill: "#ffffff", align: "center" }
+      250,
+      `Le Professeur Energeox, fou de puissance, a rétrécie notre hero Ecokid. 
+      Votre but, est d'utiliser les gestes eco-responsables afin de priver 
+      Energeox de son pouvoir et, ainsi, retrouver votre taille normale.`,
+      { font: "20px Arial", fill: "#ffffff", align: "center" }
     );
 
     setTimeout(function() {
+<<<<<<< HEAD
         game.state.start("chambre_load");
     }, load_time);
+=======
+      game.state.start("salon");
+    }, 5000);
+>>>>>>> 22a5800ad6de38f96631358dcf715a0a6d990f87
   },
 
   update: function() {
