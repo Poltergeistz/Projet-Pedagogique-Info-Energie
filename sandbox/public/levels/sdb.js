@@ -57,6 +57,6 @@ var sdbState = {
 
   gameOver: function() {
     // chargement du niveau suivant.
-    game.state.start("menu");
+    game.state.start("win");
   }
 };
