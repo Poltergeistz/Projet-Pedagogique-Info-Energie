@@ -25,5 +25,7 @@ var introState = {
     }, load_time);
   },
 
-  update: function() {}
+  update: function() {
+      
+  }
 };

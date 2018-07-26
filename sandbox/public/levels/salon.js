@@ -26,8 +26,6 @@ var score = 0;
 var lampEteinte = false;
 var salonState = {
   preload: function() {
-    game.load.image("ground", "assets/levels/ground.png");
-    game.load.image("backg", "assets/levels/backg.png");
   },
   create: function() {
     // Background
