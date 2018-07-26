@@ -21,11 +21,11 @@ var introState = {
     );
 
     setTimeout(function() {
-      game.state.start("salon");
+        game.state.start("chambre_load");
     }, load_time);
   },
 
   update: function() {
-      
+
   }
 };

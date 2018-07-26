@@ -20,8 +20,7 @@ var chambreState = {
         game.add.sprite(600, 450, "toilettes");
         game.add.sprite(700, 450, "pq");
 
-
-        //  The score
+        // The score
         timer = game.time.create();
         timerEvent = timer.add(Phaser.Timer.SECOND * chambre_time, this.gameOver, this);
         timer.start();
@@ -44,7 +43,7 @@ var chambreState = {
 
   gameOver: function () {
     // chargement du niveau suivant.
-    game.state.start('menu');
+    game.state.start('salon_load');
 
   },
 
