@@ -20,7 +20,7 @@ var introState = {
 
     setTimeout(function() {
       game.state.start("salon");
-    }, load_time);
+    }, 5000);
   },
 
   update: function() {}
