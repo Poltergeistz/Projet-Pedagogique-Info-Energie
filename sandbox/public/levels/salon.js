@@ -125,7 +125,7 @@ var salonState = {
     energyBar.setPercent(100);
   },
   update: function() {
-    energyBar.setPercent(((timer.duration * 100) / salon_time) * 1000);
+    energyBar.setPercent((timer.duration * 100) / (salon_time * 1000));
 
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
