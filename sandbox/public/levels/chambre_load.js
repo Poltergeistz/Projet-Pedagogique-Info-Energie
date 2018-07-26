@@ -15,11 +15,9 @@ var chambreLoadState = {
             `Si chaque ménage s’équipe en LED, 
             on économise l’énergie d’une ville de 2 600 000 habitants`,
             `Laissez entrer la lumière dans les pièces`,
-            `Utilisez un programmateur 
-            pour ne chauffer que lorsque vous êtes là`,
+            `Utilisez un programmateur pour ne chauffer que lorsque vous êtes là`,
             `Éteignez la lumière en quittant la pièce`,
-            `Fermez les volets et les rideaux 
-            pendant la nuit pour garder la chaleur`,
+            `Fermez les volets et les rideaux pendant la nuit pour garder la chaleur`,
             `Éteignez votre ordinateur et débranchez vos chargeurs après usage`,
             `Installez un mousseur sur les robinets pour économiser l’eau`,
             `Placez vos appareils de froid loin des sources de chaleur`,
@@ -38,7 +36,7 @@ var chambreLoadState = {
         console.log(randomPhrase);
 
         // Style 
-        var style = { font: '20px Courier', fill: '#ffffff', align: 'center' };
+        var style = { font: '20px Arial', fill: '#ffffff', align: 'center' };
 
         // Generated output 
         var loadingTitle = game.add.text(160, 250, randomPhrase, style);

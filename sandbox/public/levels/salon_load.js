@@ -38,7 +38,7 @@ var salonLoadState = {
         console.log(randomPhrase);
 
         // Style 
-        var style = { font: '20px Courier', fill: '#ffffff', align: 'center' };
+        var style = { font: '20px Arial', fill: '#ffffff', align: 'center' };
 
         // Generated output 
         var loadingTitle = game.add.text(160, 250, randomPhrase, style);
