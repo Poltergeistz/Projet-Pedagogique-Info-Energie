@@ -1,19 +1,4 @@
-var timer, energyBar;
 var load_time = 2000;
-
-function render() {
-  // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
-  if (timer.running) {
-    game.debug.text(
-      Math.round((timerEvent.delay - timer.ms) / 1000),
-      2,
-      14,
-      "#ff0"
-    );
-  } else {
-    game.debug.text("Done!", 2, 14, "#0f0");
-  }
-}
 
 var loadState = {
     preload: function () {
@@ -84,7 +69,7 @@ var loadState = {
         game.load.image("fenetre", "assets/levels/salon/salon_fenetre.png");
         game.load.image("fenetre_active", "assets/levels/salon/salon_fenetre_active.png");
         game.load.image("porte", "assets/levels/salon/salon_porte.png");
-        game.load.spritesheet("tv", "assets/levels/salon/salon_tv.png");
+        game.load.spritesheet("tv", "assets/levels/salon/salon_tv.png", 64, 64);
         game.load.image("tv_active", "assets/levels/salon/salon_tv.png");
 
         // Hero
