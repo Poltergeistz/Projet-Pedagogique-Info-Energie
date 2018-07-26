@@ -1,8 +1,10 @@
 var salon_time = 30;
-
 var chair, chair2;
 var score = 0;
 var lampEteinte = false;
+var fenetreFermee = false;
+var tvEteinte = false;
+
 var salonState = {
 
   preload: function() {
@@ -29,22 +31,33 @@ var salonState = {
     ground.body.immovable = true;
 
     // Salon sprites
+    
     game.add.sprite(650, 450, "buffet");
-    lamp = game.add.sprite(650, 418, "lamp");
+
+    //lampe
+    lamp = game.add.sprite(650, 418, "lamp_active");
     game.physics.arcade.enable(lamp);
     lamp.body.immovable = true;
     spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    //lampe
+    
     // game.add.sprite(100, 450, "chaise");
     chair = platforms.create(100, 450, "chaise");
     chair.body.immovable = true;
 
     // game.add.sprite(270, 450, "chaise").scale.x *= -1;
     game.add.sprite(200, 380, "etagere3");
-    game.add.sprite(450, 330, "fenetre");
+    //fenetre
+    fenetre = game.add.sprite(450, 330, "fenetre");
+    game.physics.arcade.enable(fenetre);
+    fenetre.body.immovable =true;
+    //porte
     porte = game.add.sprite(400 - 64, 450 - 64, "porte");
     game.physics.arcade.enable(porte);
-    game.add.sprite(150, 450, "tv");
+    porte.body.immovable = true;
+    //tv
+    tv = game.add.sprite(150, 450, "tv_active");
+    game.physics.arcade.enable(tv);
+    tv.body.immovable =true;
 
     // Capture input from user
     cursors = game.input.keyboard.createCursorKeys();
@@ -92,6 +105,8 @@ var salonState = {
     game.physics.arcade.collide(player,platforms);
     game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
     game.physics.arcade.overlap(player, porte,this.CollidePorte,null, this);
+    game.physics.arcade.overlap(player, tv,this.stopTv,null, this);
+    game.physics.arcade.overlap(player, fenetre,this.closeWindow,null, this);
     // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
 
@@ -117,9 +132,9 @@ var salonState = {
   },
 
   CollidePorte: function (obj1, obj2) {
-    if(lampEteinte == true){
+    if(lampEteinte == true && tvEteinte==true && fenetreFermee == true){
       console.log("prend la porte!!!");
-      porte.kill();
+      //porte.kill();
       game.state.start("sdb_load");
     }
     
@@ -140,13 +155,29 @@ var salonState = {
   disapearlamp: function(player, lamp) {
     console.log("eteint la lamp");
     if (spaceKey.isDown) {
-      lamp.kill();
+      lamp.loadTexture('lamp');
       lampEteinte = true;
       score++;
     }
     // if (score == 3) {
     //   this.gameOver();
     // }
+  },
+
+  stopTv: function(){
+    if (spaceKey.isDown) {
+      tv.loadTexture('tv');
+      tvEteinte = true;
+      score++;
+    }
+  },
+
+  closeWindow: function(){
+    if (spaceKey.isDown) {
+      fenetre.loadTexture('fenetre_active');
+      fenetreFermee = true;
+      score++;
+    }
   }
 
   // var game = new Phaser.Game(800, 600, Phaser.AUTO, "", {
