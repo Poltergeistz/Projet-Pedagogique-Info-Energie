@@ -1,12 +1,33 @@
+var timer, energyBar;
+
+
+function render() {
+  // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
+  if (timer.running) {
+    game.debug.text(
+      Math.round((timerEvent.delay - timer.ms) / 1000),
+      2,
+      14,
+      "#ff0"
+    );
+    } else {
+    game.debug.text("Done!", 2, 14, "#0f0");
+  }
+}
+
+
+
+
+
 var salon_time = 30;
-var chair, chair2;
+
+var chair, chair2, tv;
 var score = 0;
 var lampEteinte = false;
 var fenetreFermee = false;
 var tvEteinte = false;
 
 var salonState = {
-
   preload: function() {
     game.load.image("ground", "assets/levels/ground.png");
     game.load.image("backg", "assets/levels/backg.png");
@@ -35,7 +56,7 @@ var salonState = {
     game.add.sprite(650, 450, "buffet");
 
     //lampe
-    lamp = game.add.sprite(650, 418, "lamp_active");
+    lamp = game.add.sprite(650, 418, "lamp");
     game.physics.arcade.enable(lamp);
     lamp.body.immovable = true;
     spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -47,7 +68,7 @@ var salonState = {
     // game.add.sprite(270, 450, "chaise").scale.x *= -1;
     game.add.sprite(200, 380, "etagere3");
     //fenetre
-    fenetre = game.add.sprite(450, 330, "fenetre");
+    fenetre = game.add.sprite(450, 330, "fenetre_active");
     game.physics.arcade.enable(fenetre);
     fenetre.body.immovable =true;
     //porte
@@ -55,7 +76,7 @@ var salonState = {
     game.physics.arcade.enable(porte);
     porte.body.immovable = true;
     //tv
-    tv = game.add.sprite(150, 450, "tv_active");
+    tv = game.add.sprite(150, 450, "tv");
     game.physics.arcade.enable(tv);
     tv.body.immovable =true;
 
@@ -72,6 +93,7 @@ var salonState = {
     player.body.collideWorldBounds = true;
 
     // Animations
+    tv.animations.add("tv", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 15, true);
     player.animations.add("walk_r", [0, 1, 2, 3, 4, 5, 6, 7, 8], 15, true);
     player.animations.add(
       "walk_l",
@@ -79,6 +101,7 @@ var salonState = {
       15,
       true
     );
+    tv.animations.play("tv");
 
     //  The score
     timer = game.time.create();
@@ -87,7 +110,7 @@ var salonState = {
       this.gameOver,
       this
     );
-    
+
     timer.start();
     energyBar = new HealthBar(this.game, {
       width: 150,
@@ -102,13 +125,16 @@ var salonState = {
     energyBar.setPercent(100);
   },
   update: function() {
-    game.physics.arcade.collide(player,platforms);
+    energyBar.setPercent(((timer.duration * 100) / salon_time) * 1000);
+
+    game.physics.arcade.collide(player, platforms);
     game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
     game.physics.arcade.overlap(player, porte,this.CollidePorte,null, this);
     game.physics.arcade.overlap(player, tv,this.stopTv,null, this);
     game.physics.arcade.overlap(player, fenetre,this.closeWindow,null, this);
     // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
+    
 
     // When player stop moving
     player.body.velocity.x = 0;
@@ -155,7 +181,7 @@ var salonState = {
   disapearlamp: function(player, lamp) {
     console.log("eteint la lamp");
     if (spaceKey.isDown) {
-      lamp.loadTexture('lamp');
+      lamp.loadTexture('lamp_active');
       lampEteinte = true;
       score++;
     }
@@ -166,7 +192,7 @@ var salonState = {
 
   stopTv: function(){
     if (spaceKey.isDown) {
-      tv.loadTexture('tv');
+      tv.loadTexture('tv_active');
       tvEteinte = true;
       score++;
     }
@@ -174,7 +200,7 @@ var salonState = {
 
   closeWindow: function(){
     if (spaceKey.isDown) {
-      fenetre.loadTexture('fenetre_active');
+      fenetre.loadTexture('fenetre');
       fenetreFermee = true;
       score++;
     }
