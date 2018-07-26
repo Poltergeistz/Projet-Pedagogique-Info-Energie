@@ -78,11 +78,14 @@ var loadState = {
         // Salon
         game.load.image("buffet", "assets/levels/salon/salon_buffet.png");
         game.load.image("lamp", "assets/levels/salon/salon_buffet_lamp.png");
+        game.load.image("lamp_active", "assets/levels/salon/salon_buffet_lamp_active.png");
         game.load.image("chaise", "assets/levels/salon/salon_chaise.png");
         game.load.image("etagere3", "assets/levels/salon/salon_etagere.png");
         game.load.image("fenetre", "assets/levels/salon/salon_fenetre.png");
+        game.load.image("fenetre_active", "assets/levels/salon/salon_fenetre_active.png");
         game.load.image("porte", "assets/levels/salon/salon_porte.png");
-        game.load.image("tv", "assets/levels/salon/salon_tv.png");
+        game.load.spritesheet("tv", "assets/levels/salon/salon_tv.png");
+        game.load.image("tv_active", "assets/levels/salon/salon_tv.png");
 
         // Hero
         game.load.spritesheet("ecokid", "assets/character/testsprite.png", 32, 32);
