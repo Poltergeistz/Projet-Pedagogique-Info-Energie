@@ -1,4 +1,5 @@
 var sdb_time = 30;
+var timer, energyBar;
 
 var sdbState = {
   create: function() {
@@ -47,8 +48,11 @@ var sdbState = {
     });
     energyBar.setPercent(100);
   },
-  update: function() {
-    energyBar.setPercent((timer.duration * 100) / 30000);
+  // update: function() {
+  //   energyBar.setPercent((timer.duration * 100) / 30000);
+  // }
+  update: function(){
+      energyBar.setPercent((timer.duration * 100) / (sdb_time * 1000));
   },
 
   gameOver: function() {
