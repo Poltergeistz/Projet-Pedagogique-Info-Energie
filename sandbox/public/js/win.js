@@ -9,6 +9,9 @@ var winState = {
          - Antoine de Saint-Exupéry`, { font: '15px Arial', fill: '#00FF00'});
     },
     restart: function(){
-        game.state.start('menu');
+        function delay(){
+            setTimeout(function(){game.state.start('menu')}, 9000);
+        }
+        delay();
     }
 }
