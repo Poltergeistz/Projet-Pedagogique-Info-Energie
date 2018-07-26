@@ -64,7 +64,7 @@ var salonState = {
     game.add.sprite(450, 330, "fenetre");
     porte = game.add.sprite(400 - 64, 450 - 64, "porte");
     game.physics.arcade.enable(porte);
-    game.add.sprite(150, 450, "tv");
+    tv = game.add.sprite(150, 450, "tv");
 
     // Capture input from user
     cursors = game.input.keyboard.createCursorKeys();
