@@ -92,7 +92,7 @@ var loadState = {
   create: function() {
     function delay() {
       setTimeout(function() {
-        game.state.start("sdb");
+        game.state.start("salon");
       }, load_time);
     }
     delay();
