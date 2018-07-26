@@ -70,7 +70,7 @@ var loadState = {
         game.load.image("fenetre_active", "assets/levels/salon/salon_fenetre_active.png");
         game.load.image("porte", "assets/levels/salon/salon_porte.png");
         game.load.spritesheet("tv", "assets/levels/salon/salon_tv.png", 64, 64);
-        game.load.image("tv_active", "assets/levels/salon/salon_tv.png");
+        game.load.image("tv_active", "assets/levels/salon/salon_tv_active.png");
 
         // Hero
         game.load.spritesheet("ecokid", "assets/character/testsprite.png", 32, 32);
