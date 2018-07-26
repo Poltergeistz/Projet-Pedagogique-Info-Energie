@@ -1,12 +1,9 @@
-//var des, bed;
-
-// var player_bounce = 0.0,
-//   player_gravity =  1000,
-//   player_scale = 1.0;
-
 var salon_time = 30;
 
+var chair, chair2;
+
 var salonState = {
+
   preload: function() {
     game.load.image("ground", "assets/levels/ground.png");
     game.load.image("backg", "assets/levels/backg.png");
@@ -33,8 +30,12 @@ var salonState = {
     // Salon sprites
     game.add.sprite(650, 450, "buffet");
     game.add.sprite(650, 418, "lamp");
-    game.add.sprite(100, 450, "chaise");
-    game.add.sprite(270, 450, "chaise").scale.x *= -1;
+    //lampe
+    // game.add.sprite(100, 450, "chaise");
+    chair = platforms.create(100, 450, "chaise");
+    chair.body.immovable = true;
+
+    // game.add.sprite(270, 450, "chaise").scale.x *= -1;
     game.add.sprite(200, 380, "etagere3");
     game.add.sprite(450, 330, "fenetre");
     game.add.sprite(400 - 64, 450 - 64, "porte");
@@ -53,15 +54,13 @@ var salonState = {
     player.body.collideWorldBounds = true;
 
     // Animations
-    player.animations.add("walk", [0,1,2,3,4,5,6,7,8], 15, true);
-
-    /*
-        // Ledges
-        var ledge = platforms.create(100, 450, "ground");
-        ledge.body.immovable = true;
-
-        ledge = platforms.create(270, 450, "ground");
-        ledge.body.immovable = true; */
+    player.animations.add("walk_r", [0, 1, 2, 3, 4, 5, 6, 7, 8], 15, true);
+    player.animations.add(
+      "walk_l",
+      [9, 10, 11, 12, 13, 14, 15, 16, 17],
+      15,
+      true
+    );
 
     //  The score
     timer = game.time.create();
@@ -70,6 +69,7 @@ var salonState = {
       this.gameOver,
       this
     );
+    
     timer.start();
     energyBar = new HealthBar(this.game, {
       width: 150,
@@ -85,31 +85,28 @@ var salonState = {
   },
   update: function() {
     game.physics.arcade.collide(player, platforms);
+    // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
-    
-        // When player stop moving
-        player.body.velocity.x = 0
-  
-      // Controls
-      if (cursors.left.isDown) {
-      player.body.velocity.x = -150;
-      player.scale.setTo(-1, 1); // flip to left
 
-      player.animations.play('walk');
-          } else if (cursors.right.isDown) {
+    // When player stop moving
+    player.body.velocity.x = 0;
+
+    // Controls
+    if (cursors.left.isDown) {
+      player.body.velocity.x = -150;
+      player.animations.play("walk_l");
+    } else if (cursors.right.isDown) {
       player.body.velocity.x = 150;
-      player.scale.setTo(1, 1); // flip to right
-  
-      player.animations.play('walk');
-          } else {
+      player.animations.play("walk_r");
+    } else {
       // If no movement keys are pressed, stop the player
-      player.animations.stop()
-      }
-  
-      //  This allows the player to jump!
+      player.animations.stop();
+    }
+
+    //  This allows the player to jump!
     if (cursors.up.isDown && player.body.touching.down) {
-      player.body.velocity.y = -400
-  }
+      player.body.velocity.y = -400;
+    }
   },
 
   gameOver: function() {

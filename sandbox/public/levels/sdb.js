@@ -1,4 +1,4 @@
-var sdb_time = 5;
+var sdb_time = 30;
 
 var sdbState = {
 

@@ -38,7 +38,7 @@ var sdbLoadState = {
     },
     create: function () {
         function delay(){
-            setTimeout(function(){game.state.start('sdb')},50);
+            setTimeout(function(){game.state.start('sdb')},load_time);
         }
         delay();
     }

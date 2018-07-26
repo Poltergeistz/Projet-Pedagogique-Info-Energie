@@ -1,4 +1,5 @@
 var timer, energyBar;
+var load_time = 2000;
 
 function render() {
   // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
@@ -57,9 +58,10 @@ var loadState = {
         var loadingLabel = game.add.text(300, 150, 'Chargement...', { font: '30px Courier', fill: '#ffffff' });
 
         // // UI
+        game.load.image("landscape_background", "assets/menu_bg.png");
         // game.load.image("button", "assets/ui/btn_loading.png");
         // PLayer
-        game.load.spritesheet("ecokid", "assets/character/hero_sprite2.png", 28, 48);
+        game.load.spritesheet("ecokid", "assets/character/hero_sprite.png", 28, 48);
         // Sky
         game.load.image("sky", "assets/levels/sky.png");
         // Salle de bain :
@@ -87,7 +89,7 @@ var loadState = {
     },
     create: function () {
         function delay(){
-            setTimeout(function(){game.state.start('menu')},5000);
+            setTimeout(function(){game.state.start('menu')},load_time);
         }
         delay();
     }
