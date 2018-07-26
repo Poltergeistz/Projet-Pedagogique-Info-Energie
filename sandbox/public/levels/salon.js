@@ -1,10 +1,30 @@
+var timer, energyBar;
+
+
+function render() {
+  // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
+  if (timer.running) {
+    game.debug.text(
+      Math.round((timerEvent.delay - timer.ms) / 1000),
+      2,
+      14,
+      "#ff0"
+    );
+    } else {
+    game.debug.text("Done!", 2, 14, "#0f0");
+  }
+}
+
+
+
+
+
 var salon_time = 30;
 
-var chair, chair2;
+var chair, chair2, tv;
 var score = 0;
 var lampEteinte = false;
 var salonState = {
-
   preload: function() {
     game.load.image("ground", "assets/levels/ground.png");
     game.load.image("backg", "assets/levels/backg.png");
@@ -44,7 +64,7 @@ var salonState = {
     game.add.sprite(450, 330, "fenetre");
     porte = game.add.sprite(400 - 64, 450 - 64, "porte");
     game.physics.arcade.enable(porte);
-    game.add.sprite(150, 450, "tv");
+    tv = game.add.sprite(150, 450, "tv");
 
     // Capture input from user
     cursors = game.input.keyboard.createCursorKeys();
@@ -59,6 +79,7 @@ var salonState = {
     player.body.collideWorldBounds = true;
 
     // Animations
+    tv.animations.add("tv", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 15, true);
     player.animations.add("walk_r", [0, 1, 2, 3, 4, 5, 6, 7, 8], 15, true);
     player.animations.add(
       "walk_l",
@@ -73,7 +94,7 @@ var salonState = {
       this.gameOver,
       this
     );
-    
+
     timer.start();
     energyBar = new HealthBar(this.game, {
       width: 150,
@@ -88,12 +109,15 @@ var salonState = {
     energyBar.setPercent(100);
   },
   update: function() {
-    game.physics.arcade.collide(player,platforms);
+    energyBar.setPercent(((timer.duration * 100) / salon_time) * 1000);
+
+    game.physics.arcade.collide(player, platforms);
     game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
     game.physics.arcade.overlap(player, porte,this.CollidePorte,null, this);
     energyBar.setPercent((timer.duration*100)/30000);
     // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
+    tv.animations.play("tv");
 
     // When player stop moving
     player.body.velocity.x = 0;
