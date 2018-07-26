@@ -66,7 +66,6 @@ var salonState = {
       15,
       true
     );
-
     //  The score
     timer = game.time.create();
     timerEvent = timer.add(
@@ -92,6 +91,7 @@ var salonState = {
     game.physics.arcade.collide(player,platforms);
     game.physics.arcade.overlap(player, lamp,this.disapearlamp,null, this);
     game.physics.arcade.overlap(player, porte,this.CollidePorte,null, this);
+    energyBar.setPercent((timer.duration*100)/30000);
     // game.physics.arcade.collide(player, salon_items);
     // game.debug.body(player);
 

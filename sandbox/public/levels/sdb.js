@@ -39,7 +39,7 @@ var sdbState = {
 
   },
   update: function(){
-
+      energyBar.setPercent((timer.duration*100)/30000);
   },
 
   gameOver: function () {
