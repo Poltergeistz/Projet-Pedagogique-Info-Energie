@@ -140,7 +140,7 @@ var chambreState = {
     if(ordiEteint == true && lampe2Eteinte==true && fenetreEteinte == true){
       console.log("prend la porte!!!");
       //porte.kill();
-      game.state.start("salon_load");
+      // game.state.start("salon_load");
     }
     
     //  This function can perform your own additional checks on the 2 objects that collided.
