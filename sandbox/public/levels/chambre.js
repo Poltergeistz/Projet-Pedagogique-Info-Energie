@@ -110,6 +110,11 @@ var chambreState = {
   update: function () {
     energyBar.setPercent((timer.duration * 100) / (chambre_time * 1000));
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.overlap(player, porte,this.gameOver,null, this);
+    game.physics.arcade.overlap(player, ordi,this.stopOrdi,null, this);
+    game.physics.arcade.overlap(player, lampe,this.stopLamp,null, this);
+    game.physics.arcade.overlap(player, fenetre,this.stopWindow,null, this);
+
     // When player stop moving
     player.body.velocity.x = 0;
 
@@ -154,6 +159,7 @@ var chambreState = {
 
   stopOrdi: function () {
     if (spaceKey.isDown) {
+      console.log("ETEIND UN TRUC");
       ordi.loadTexture("ordi_active");
       ordiEteint = true;
       score++;
@@ -163,6 +169,7 @@ var chambreState = {
 
   stopLamp: function () {
     if (spaceKey.isDown) {
+      console.log("ETEIND UN TRUC");
       lampe.loadTexture("lampe_active");
       lampe2Eteinte = true;
       score++;
@@ -172,6 +179,7 @@ var chambreState = {
 
   stopWindow: function () {
     if (spaceKey.isDown) {
+      console.log("ETEIND UN TRUC");
       fenetre.loadTexture("fenetre");
       fenetreEteinte = true;
       score++;
