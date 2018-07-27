@@ -65,7 +65,7 @@ var salonState = {
     chair = platforms.create(100, 450, "chaise");
     chair.body.immovable = true;
 
-    chair2 = pplatforms.create(200, 450, "chaise");
+    chair2 = platforms.create(200, 450, "chaise");
     chair2.scale.x *= -1;
     chair2.body.immovable = true;
 
