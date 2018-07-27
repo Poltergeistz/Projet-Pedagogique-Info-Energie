@@ -3,11 +3,11 @@ var timer, energyBar;
 
 var score = 0,
 //   seat,
-  desk,
-  bed,
+  bureau,
   ordi,
-  lamp,
-  curtains
+  lampe,
+  lit,
+  fenetre
 //   windowdown,
 //   player,
 //   platforms,
@@ -16,6 +16,8 @@ var score = 0,
 //   itemacct,
 //   spaceKey
   ;
+
+  var ordiEteint, lampe2Eteinte, fenetreEteinte = false;
 
 var chambreState = {
 
@@ -40,11 +42,21 @@ var chambreState = {
 
         // Chambre
         game.add.sprite(100, 450, "bureau");
-        game.add.sprite(110, 405, "ordi");
-        game.add.sprite(165, 419, "lampe");
+        bureau = platforms.create(100, 450, "bureau");
+        bureau.body.immovable = true;
+        ordi = game.add.sprite(110, 405, "ordi");
+        game.physics.arcade.enable(ordi);
+        ordi.body.immovable = true;
+        spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        lampe = game.add.sprite(165, 419, "lampe");
+        game.physics.arcade.enable(lampe);
+        lampe.body.immovable = true;
         game.add.sprite(150, 320, "clock");
         game.add.sprite(480, 417, "lit");
-        game.add.sprite(300, 300, "ch_fenetre");
+        fenetre = game.add.sprite(300, 300, "ch_fenetre");
+        game.physics.arcade.enable(fenetre);
+        fenetre.body.immovable = true;
+        
 
         // The score
         timer = game.time.create();
@@ -72,5 +84,33 @@ var chambreState = {
     game.state.start('salon_load');
 
   },
+
+
+
+  stopOrdi: function(){
+    if (spaceKey.isDown) {
+      ordi.loadTexture('ordi_active');
+      ordiEteint = true;
+      score++;
+    }
+  },
+
+
+  stopLamp: function(){
+    if (spaceKey.isDown) {
+      lampe.loadTexture('lampe_active');
+      lampe2Eteinte = true;
+      score++;
+    }
+  },
+
+
+  stopWindow: function(){
+    if (spaceKey.isDown) {
+      fenetre.loadTexture('fenetre');
+      fenetreEteinte = true;
+      score++;
+    }
+  }
 
 }

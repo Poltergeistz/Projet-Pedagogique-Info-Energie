@@ -21,7 +21,7 @@ function render() {
 
 var salon_time = 30;
 
-var chair, chair2, tv;
+var chair, chair2, tv, meuble;
 var score = 0;
 var lampEteinte = false;
 var fenetreFermee = false;
@@ -52,6 +52,8 @@ var salonState = {
     // Salon sprites
     
     game.add.sprite(650, 450, "buffet");
+    meuble = platforms.create(650, 450, "buffet");
+    meuble.body.immovable = true;
 
     //lampe
     lamp = game.add.sprite(650, 418, "lamp");
@@ -63,7 +65,10 @@ var salonState = {
     chair = platforms.create(100, 450, "chaise");
     chair.body.immovable = true;
 
-    // game.add.sprite(270, 450, "chaise").scale.x *= -1;
+    chair2 = pplatforms.create(200, 450, "chaise");
+    chair2.scale.x *= -1;
+    chair2.body.immovable = true;
+
     game.add.sprite(200, 380, "etagere3");
     //fenetre
     fenetre = game.add.sprite(450, 330, "fenetre_active");
