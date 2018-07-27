@@ -19,7 +19,7 @@ var introState = {
     );
 
     setTimeout(function() {
-        game.state.start("menu");
+        game.state.start("chambre_load");
     }, 5000);
   },
 
