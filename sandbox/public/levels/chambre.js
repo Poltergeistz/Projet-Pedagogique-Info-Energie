@@ -60,6 +60,24 @@ var chambreState = {
         fenetre.body.immovable = true;
         
 
+        // Create the player inside the lvl
+    player = game.add.sprite(32, game.world.height - 250, "ecokid");
+    game.physics.arcade.enable(player);
+
+    // Add gravity
+    player.body.bounce.y = 0.2;
+    player.body.gravity.y = 800;
+    player.body.collideWorldBounds = true;
+
+    // Player animations
+    player.animations.add("walk_r", [0, 1, 2, 3, 4, 5, 6, 7, 8], 15, true);
+    player.animations.add(
+      "walk_l",
+      [9, 10, 11, 12, 13, 14, 15, 16, 17],
+      15,
+      true
+    );
+
         // The score
         timer = game.time.create();
         timerEvent = timer.add(Phaser.Timer.SECOND * chambre_time, this.gameOver, this);
@@ -79,6 +97,26 @@ var chambreState = {
   },
   update: function(){
       energyBar.setPercent((timer.duration * 100) / (chambre_time * 1000));
+      game.physics.arcade.collide(player, platforms);
+      // When player stop moving
+    player.body.velocity.x = 0;
+
+    // Controls
+    if (cursors.left.isDown) {
+      player.body.velocity.x = -150;
+      player.animations.play("walk_l");
+    } else if (cursors.right.isDown) {
+      player.body.velocity.x = 150;
+      player.animations.play("walk_r");
+    } else {
+      // If no movement keys are pressed, stop the player
+      player.animations.stop();
+    }
+
+    //  This allows the player to jump!
+    if (cursors.up.isDown && player.body.touching.down) {
+      player.body.velocity.y = -400;
+    }
   },
 
   gameOver: function () {
