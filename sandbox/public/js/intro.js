@@ -19,8 +19,8 @@ var introState = {
     );
 
     setTimeout(function() {
-        game.state.start("chambre_load");
-    }, load_time);
+        game.state.start("menu");
+    }, 5000);
   },
 
   update: function() {
