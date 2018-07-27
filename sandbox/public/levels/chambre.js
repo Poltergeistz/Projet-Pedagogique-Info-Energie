@@ -60,6 +60,9 @@ var chambreState = {
         fenetre.body.immovable = true;
         
 
+        // Capture input from user
+    cursors = game.input.keyboard.createCursorKeys();
+
         // Create the player inside the lvl
     player = game.add.sprite(32, game.world.height - 250, "ecokid");
     game.physics.arcade.enable(player);
