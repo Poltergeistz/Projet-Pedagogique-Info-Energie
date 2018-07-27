@@ -52,7 +52,9 @@ var chambreState = {
         game.physics.arcade.enable(lampe);
         lampe.body.immovable = true;
         game.add.sprite(150, 320, "clock");
-        game.add.sprite(480, 417, "lit");
+        lit = game.add.sprite(480, 417, "lit");
+        lit.scale.setTo(0.75, 0.75);
+
         fenetre = game.add.sprite(300, 300, "ch_fenetre");
         game.physics.arcade.enable(fenetre);
         fenetre.body.immovable = true;

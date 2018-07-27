@@ -19,13 +19,8 @@ var introState = {
     );
 
     setTimeout(function() {
-<<<<<<< HEAD
         game.state.start("chambre_load");
     }, load_time);
-=======
-      game.state.start("salon");
-    }, 5000);
->>>>>>> 22a5800ad6de38f96631358dcf715a0a6d990f87
   },
 
   update: function() {
